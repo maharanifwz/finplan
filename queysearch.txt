@@ -1,0 +1,10 @@
+Daftar query search
+
+1. fizzBuzz challange
+2. remove dot with regex in javascript
+3. how to make an input only consist of integer in javascript
+4. how to make the first character of input only consist of string using javascript
+5. how to check if the character consist of an uppercase javascript
+6. how to check if the character consist of an lowercase javascript
+7. how to get per word in sentences using javascript
+8. convert string array to integer array javascript
