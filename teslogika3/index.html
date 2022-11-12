@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<script type="text/javascript">
+		function validasi(form){
+			if(form.pass.value.length == 0) {
+				alert("Masukkan password Anda");
+				return false;
+			}
+            if(containsNumeric(form.pass.value)) {
+                alert("Kata sandi harus memiliki angka");
+                return false
+            }
+            if(form.pass.value.charAt(0) <= '9' && form.pass.value.charAt(0) >= '0') {
+                alert("Karakter awal tidak boleh angka");
+                return false
+            }
+            if(!containsUppercase(form.pass.value) || !containsLowercase(form.pass.value)) {
+                alert("Kata sandi harus memiliki huruf kapital dan huruf kecil");
+                return false
+            }
+			if(form.pass.value.length < 8){
+				alert("Kata sandi minimal 8 karakter");
+				return false;
+			}
+            if(form.pass.value.length > 33){
+				alert("Kata sandi maksimal 32 karakter");
+				return false;
+			}
+			alert("Kata sandi valid");
+			return true;
+		}
+        function containsUppercase(str) {
+            return /[A-Z]/.test(str);
+        }
+        function containsLowercase(str) {
+            return /[a-z]/.test(str);
+        }
+        function containsNumeric(str) {
+            return /^[a-zA-Z]+$/.test(str);
+        }
+	</script>
+</head>
+<body>
+		<b>
+			<div>
+				<form name="periksa_password" onSubmit="return validasi(this);">
+					Masukkan password Anda:
+					<br />
+					<input type="password" id="pass" name="pass" size="33" />
+					<p>
+						<input type="submit" name="" value="Submit Password">
+						<input type="reset">
+					</p>
+				</form>
+			</div>
+		</b>
+</body>
+</html>
